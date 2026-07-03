@@ -12,3 +12,21 @@ private_subnet_cidr = "10.0.2.0/24"
 router_name = "gcp-cloud-router"
 
 nat_name = "gcp-cloud-nat"
+
+artifact_repository_name = "employee-app-repo"
+artifact_location        = "asia-south1"
+
+bucket_name = "gcp-devops-project-501115-employee-docs"
+
+private_service_range_name   = "private-service-range"
+private_service_prefix_length = 16
+
+db_instance_name = "employee-db"
+
+db_version = "MYSQL_8_0"
+
+db_name = "employee"
+
+db_user = "employeeadmin"
+
+db_password = "Employee@123"

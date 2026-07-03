@@ -49,3 +49,62 @@ variable "nat_name" {
   description = "Cloud NAT name"
   type        = string
 }
+
+## Artifact Registry Variables
+
+variable "artifact_repository_name" {
+  description = "Artifact Registry repository name"
+  type        = string
+}
+
+variable "artifact_location" {
+  description = "Artifact Registry location"
+  type        = string
+}
+
+## Storage Bucket Variables
+
+variable "bucket_name" {
+  description = "Cloud Storage bucket name"
+  type        = string
+}
+
+## Private Service Access Variables
+
+variable "private_service_range_name" {
+  description = "Reserved IP range for Private Service Access"
+  type        = string
+}
+
+variable "private_service_prefix_length" {
+  description = "CIDR prefix length for PSA"
+  type        = number
+}
+
+## Cloud SQL Variables
+
+variable "db_instance_name" {
+  description = "Cloud SQL instance name"
+  type        = string
+}
+
+variable "db_version" {
+  description = "Database version"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Application database"
+  type        = string
+}
+
+variable "db_user" {
+  description = "Database username"
+  type        = string
+}
+
+variable "db_password" {
+  description = "Database password"
+  type        = string
+  sensitive   = true
+}

@@ -1,10 +1,45 @@
 # GCP DevOps Project Architecture
 
-## Region
-asia-south1
+# Project Progress
 
-## Zone
-asia-south1-a
+## Phase 1 - Environment
+- [x] Git
+- [x] Docker
+- [x] Terraform
+- [x] Google Cloud SDK
+
+## Phase 2 - Networking
+- [x] Custom VPC
+- [x] Public Subnet
+- [x] Private Subnet
+- [x] Firewall Rules
+- [x] Cloud Router
+- [x] Cloud NAT
+
+## Phase 3 - Platform
+- [x] Artifact Registry
+- [x] Cloud Storage
+- [ ] Secret Manager
+- [ ] Pub/Sub
+- [ ] Cloud SQL
+
+## Phase 4 - Compute
+- [ ] GKE
+- [ ] Jenkins VM
+
+## Phase 5 - Application
+- [ ] React Frontend
+- [ ] Node Backend
+- [ ] Docker
+- [ ] Kubernetes
+
+## Phase 6 - CI/CD
+- [ ] Jenkins Pipeline
+
+## Phase 7 - Monitoring
+- [ ] Cloud Monitoring
+- [ ] Alert Policies
+
 
 Phase 1  → Networking
 Phase 2  → Storage + Database + Managed Services
@@ -15,6 +50,12 @@ Phase 6  → Docker
 Phase 7  → Deploy to GKE
 Phase 8  → Jenkins CI/CD
 Phase 9  → Monitoring & Alerting
+
+## Region
+asia-south1
+
+## Zone
+asia-south1-a
 
 ## Network
 
@@ -30,3 +71,45 @@ Phase 9  → Monitoring & Alerting
 - private-subnet
 - 10.0.2.0/24
 - Private Google Access Enabled
+
+Phase 1 - Networking
+✔ Custom VPC
+✔ Public Subnet
+✔ Private Subnet
+✔ Firewall Rules
+✔ Cloud Router
+✔ Cloud NAT
+
+## Platform
+
+phase 2 -  Platform
+✔ Artifact Registry
+
+                        Internet
+                             │
+                    HTTPS Load Balancer
+                             │
+                        GKE Ingress
+                             │
+              ┌──────────────┴──────────────┐
+              │                             │
+         React Frontend               Node Backend
+                                            │
+                    ┌───────────────┬───────────────┬──────────────┐
+                    │               │               │
+                    ▼               ▼               ▼
+             Cloud Storage      Cloud SQL       Pub/Sub
+                    │               ▲
+                    │               │
+             Signed URLs      Private Service Access
+                    │               │
+              IAM Policies   Google Producer VPC
+
+Jenkins VM
+     │
+     ▼
+Artifact Registry
+     │
+     ▼
+GKE Cluster
+
