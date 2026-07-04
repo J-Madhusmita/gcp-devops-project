@@ -30,3 +30,8 @@ db_name = "employee"
 db_user = "employeeadmin"
 
 db_password = "Employee@123"
+
+db_secret_name = "employee-db-password"
+
+topic_name        = "employee-upload-topic"
+subscription_name = "employee-upload-subscription"

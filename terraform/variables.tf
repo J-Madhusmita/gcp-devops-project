@@ -108,3 +108,21 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+## Secret Manager Variable
+
+variable "db_secret_name" {
+  description = "Secret Manager secret name for database password"
+  type        = string
+}
+
+## Pub/Sub Variables
+variable "topic_name" {
+  description = "Pub/Sub topic name"
+  type        = string
+}
+
+variable "subscription_name" {
+  description = "Pub/Sub subscription name"
+  type        = string
+}
