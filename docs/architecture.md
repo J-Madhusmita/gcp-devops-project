@@ -113,3 +113,26 @@ Artifact Registry
      ▼
 GKE Cluster
 
+## Backend 
+
+server.js → Starts the application.
+app.js → Configures Express and middleware.
+routes/ → Defines API endpoints.
+controllers/ → Handles HTTP requests and responses.
+services/ → Contains business logic and interactions with GCP services.
+models/ → Represents database entities.
+
+## Express
+What?
+A web framework for Node.js.
+Why?
+Node.js only provides HTTP modules.
+Express makes routing, middleware and APIs easier.
+Where used?
+Backend REST APIs.
+Node.js already has an HTTP module.
+Example
+const http = require("http");
+We could build APIs using only Node.js. 
+But look how much code it needs.
+Express makes all of that simple.

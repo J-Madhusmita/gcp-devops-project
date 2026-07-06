@@ -35,3 +35,7 @@ db_secret_name = "employee-db-password"
 
 topic_name        = "employee-upload-topic"
 subscription_name = "employee-upload-subscription"
+
+backend_service_account_name = "employee-backend-sa"
+
+backend_service_account_display_name = "Employee Backend Service Account"

@@ -126,3 +126,15 @@ variable "subscription_name" {
   description = "Pub/Sub subscription name"
   type        = string
 }
+
+## Backend Service Account Variables
+
+variable "backend_service_account_name" {
+  description = "Backend Service Account"
+  type        = string
+}
+
+variable "backend_service_account_display_name" {
+  description = "Display name"
+  type        = string
+}
