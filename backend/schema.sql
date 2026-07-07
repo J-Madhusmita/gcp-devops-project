@@ -1,8 +1,6 @@
-USE employee;
+CREATE DATABASE IF NOT EXISTS employee;
 
--- ==========================================
--- USERS TABLE (Admin Authentication)
--- ==========================================
+USE employee;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -12,10 +10,6 @@ CREATE TABLE IF NOT EXISTS users (
     role ENUM('ADMIN') DEFAULT 'ADMIN',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
--- ==========================================
--- EMPLOYEES TABLE
--- ==========================================
 
 CREATE TABLE IF NOT EXISTS employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
