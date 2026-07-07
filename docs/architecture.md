@@ -136,3 +136,29 @@ const http = require("http");
 We could build APIs using only Node.js. 
 But look how much code it needs.
 Express makes all of that simple.
+
+## Local Development
+
+Frontend (React)
+        │
+        ▼
+Backend (Node.js + Express)
+        │
+        ▼
+Docker MySQL
+        │
+        ▼
+Cloud Storage (Resume Upload)
+
+## Containerization
+
+- Frontend Docker Image
+- Backend Docker Image
+- Docker Compose
+
+## Image Registry
+
+Docker Images
+        │
+        ▼
+Google Artifact Registry

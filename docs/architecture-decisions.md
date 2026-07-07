@@ -133,3 +133,95 @@ You don't manage the operating system.
 You don't even know which VM it's running on.
 Therefore you cannot just place it inside your subnet.
 Google exposes it through a private endpoint, and the connectivity is provided via Private Service Access.
+
+# Architecture Decision Records
+
+## ADR-001
+### Infrastructure Provisioning
+
+Decision:
+Infrastructure is provisioned using Terraform.
+
+Reason:
+Infrastructure as Code provides repeatable and version-controlled deployments.
+
+---
+
+## ADR-002
+### Backend Framework
+
+Decision:
+Node.js with Express.
+
+Reason:
+Simple REST API development and good Docker support.
+
+---
+
+## ADR-003
+### Frontend
+
+Decision:
+React with Vite.
+
+Reason:
+Fast development and lightweight frontend.
+
+---
+
+## ADR-004
+### Database
+
+Current:
+Docker MySQL for local development.
+
+Future:
+Cloud SQL for production deployment.
+
+Reason:
+Local development is easier with Docker, while Cloud SQL is a managed database suitable for production.
+
+---
+
+## ADR-005
+### Object Storage
+
+Decision:
+Google Cloud Storage.
+
+Reason:
+Resume files are stored outside the database.
+
+---
+
+## ADR-006
+### Authentication
+
+Decision:
+JWT Authentication.
+
+Reason:
+Stateless authentication for REST APIs.
+
+---
+
+## ADR-007
+### Containerization
+
+Decision:
+Docker + Docker Compose.
+
+Reason:
+Consistent development environment.
+
+---
+
+## ADR-008
+### Container Registry
+
+Decision:
+Google Artifact Registry.
+
+Reason:
+Store Docker images for Kubernetes deployments.
+
