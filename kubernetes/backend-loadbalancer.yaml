@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-loadbalancer
+  namespace: employee-app
+
+spec:
+  selector:
+    app: backend
+
+  type: LoadBalancer
+
+  ports:
+  - port: 5000
+    targetPort: 5000
