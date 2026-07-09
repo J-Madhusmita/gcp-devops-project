@@ -207,3 +207,44 @@ Pub/Sub Event Published
 - Kubernetes Secrets
 - IAM Service Account
 - JWT Authentication
+
+## CI/CD 
+✅ Jenkins on GCE
+✅ GitHub
+✅ Jenkinsfile
+✅ Build Images
+✅ Push Images
+✅ Deploy to GKE
+✅ Rolling Update
+
+
+                    GitHub
+                       │
+                  Git Push
+                       │
+                       ▼
+                Jenkins (GCE VM)
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+ Checkout         Docker Build      Docker Build
+ Backend           Backend           Frontend
+      │                │                │
+      └────────────┬───┴────────────────┘
+                   ▼
+          Artifact Registry
+                   │
+                   ▼
+         kubectl set image
+                   │
+                   ▼
+          Google Kubernetes Engine
+          ┌────────────┴────────────┐
+          ▼                         ▼
+    Backend Pods             Frontend Pods
+          │
+          ▼
+      Cloud SQL
+          │
+          ▼
+Cloud Storage + Pub/Sub
