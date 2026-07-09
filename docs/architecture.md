@@ -162,3 +162,48 @@ Docker Images
         │
         ▼
 Google Artifact Registry
+
+
+## Kubernetes Resources
+
+- Namespace
+- Backend Deployment
+- Frontend Deployment
+- Backend ClusterIP Service
+- Backend LoadBalancer
+- Frontend LoadBalancer
+- ConfigMap
+- Secret
+- Horizontal Pod Autoscaler
+- Liveness Probe
+- Readiness Probe
+
+
+## Storage Flow
+
+Resume Upload
+
+↓
+
+Backend API
+
+↓
+
+Cloud Storage
+
+↓
+
+Resume URL stored in Cloud SQL
+
+↓
+
+Pub/Sub Event Published
+
+---
+
+## Security
+
+- Private Cloud SQL
+- Kubernetes Secrets
+- IAM Service Account
+- JWT Authentication

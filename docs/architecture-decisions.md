@@ -225,3 +225,22 @@ Google Artifact Registry.
 Reason:
 Store Docker images for Kubernetes deployments.
 
+### Decision
+
+Horizontal Pod Autoscaler scales backend pods.
+
+### Reason
+
+Automatically adjusts application capacity based on CPU utilization.
+
+---
+
+## ADR-011
+
+### Decision
+
+Readiness and Liveness probes are enabled.
+
+### Reason
+
+Ensures traffic is only routed to healthy pods and automatically restarts unhealthy containers.

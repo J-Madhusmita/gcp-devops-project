@@ -55,3 +55,20 @@ resource "google_compute_router_nat" "nat" {
 
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
+
+
+resource "google_compute_firewall" "jenkins" {
+
+  name = "allow-jenkins"
+
+  network = google_compute_network.vpc.name
+
+  allow {
+    protocol = "tcp"
+    ports = ["8080"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+
+  target_tags = ["jenkins"]
+}
