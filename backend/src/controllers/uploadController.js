@@ -1,5 +1,6 @@
 import bucket from "../services/storageService.js";
 import pool from "../config/database.js";
+import { publishResumeUploaded } from "../services/pubsubService.js";
 
 export const uploadResume = async (req, res) => {
   try {
@@ -22,6 +23,7 @@ export const uploadResume = async (req, res) => {
         contentType: req.file.mimetype
       }
     });
+    console.log(`Resume uploaded to ${fileUrl}`);
 
     const fileUrl = `gs://${process.env.BUCKET_NAME}/${fileName}`;
 
@@ -29,6 +31,13 @@ export const uploadResume = async (req, res) => {
       "UPDATE employees SET resume_url=? WHERE id=?",
       [fileUrl, id]
     );
+
+    await publishResumeUploaded({
+      employeeId: id,
+      resumeUrl: fileUrl,
+      uploadedAt: new Date().toISOString()
+    });
+    console.log(`Pub/Sub event published for employee ${id}`);
 
     res.json({
       success: true,

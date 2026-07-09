@@ -5,4 +5,10 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+    console.log("======================================");
+    console.log("EmployeeHub Backend Started");
+    console.log(`Port       : ${process.env.PORT}`);
+    console.log(`Database   : ${process.env.DB_HOST}`);
+    console.log(`Bucket     : ${process.env.BUCKET_NAME}`);
+    console.log("======================================");
 });
